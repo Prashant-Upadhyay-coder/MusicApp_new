@@ -1,0 +1,53 @@
+
+.btn_first{
+    width: 99px;
+    height: 22px;
+    background-color: black;
+    color: #FFF;
+    font-size: 10px;
+    padding-left: 0px;
+    font-weight: 600;
+    line-height: normal;
+}
+.btn-see{
+    width: 65px;
+    height: 22px;
+    background-color: black;
+    color: #FFF;
+    font-size: 10px;
+    padding-left: 0px;
+    font-weight: 600;
+    line-height: normal;
+}
+.image-container img{
+    margin-top: 5px;
+    width: 100px;
+    height: 90px;
+    flex-shrink: 0;
+    border-radius: 12px;
+}
+
+.image-container {
+    display: flex;
+    flex-direction: row;
+    overflow-x: scroll; /* Enable horizontal scrolling */
+    white-space: nowrap;
+    scrollbar-width: none; /* Hide the standard scroll bar */
+  }
+  
+  .scrolling-image {
+    width: 100px;
+    height: 100px;
+    border-radius: 12px;
+    margin-right: 10px;
+  }
+
+
+.image-container::-webkit-scrollbar {
+    width: 0.5rem; /* Width of the invisible scrollbar (adjust as needed) */
+}
+
+.image-container::-webkit-scrollbar-thumb {
+    background-color: transparent; /* Make the scrollbar thumb transparent */
+}
+  

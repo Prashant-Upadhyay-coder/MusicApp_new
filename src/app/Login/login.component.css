@@ -1,0 +1,52 @@
+.login_page{
+    background-color: #dbe6f4;
+    width: 100vw;
+    padding: 0px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.quotes{
+    font-family: 'Poppins', sans-serif;
+  margin-top: 14%;
+  font-size: 34px;
+  font-weight: bold;
+}
+.btn_primary{
+    width: 272px;
+    border-radius: 23px;
+    color: white;
+    background-color: #4692E6;
+    text-align: start;
+}
+.btn_Secondary{
+    width: 272px;
+    text-align: start;
+    border-radius: 23px;
+    color: black;
+    background-color: #ffff ;
+}
+.button{
+    margin-top: 15%;
+   
+}
+.Other{
+    font-size: 12px;
+}
+
+.uuDo{
+    font-size: 20px;
+    font-weight: bold;
+}
+
+@media screen and (max-width: 768px) {
+    .landing_page {
+        padding: 10px;
+        height: 100vh;
+    }
+    .quotes{
+      margin-top: 54%;
+    }
+    .button{
+        margin-top: 50%;
+    }
+}

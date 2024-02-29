@@ -1,0 +1,20 @@
+
+.uuDo{
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.User_imag_Div {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    position: relative;
+    border: 2px solid #4692E6;;
+    border-radius: 18px;
+    padding: 12px;
+    margin-top: 4px;
+}
+.User_name{
+    font-size: 12px;
+    font-weight: bold;
+}

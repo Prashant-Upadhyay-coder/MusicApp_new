@@ -1,0 +1,152 @@
+.Music_page {
+    background-color: #dbe6f4;
+    width: 100vw;
+    height: 92vh;
+    padding: 8px 0px 2px 0px;
+    font-family: 'Poppins', sans-serif;
+}
+.Music_Image_Container{
+    width: 324px;
+    height: 324px;
+    border-radius: 20px;
+}
+
+.img_div{
+    display: flex;
+    justify-content: center;
+    margin-top: 28px;
+}
+.music_title{
+    color: #000;
+font-size: 20px;
+font-style: normal;
+font-weight: 600;
+line-height: normal;
+}
+.Author_name{
+    color: #000;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+.Music_Button{
+    padding: 0px 8px 0px 8px;
+    border-radius: 17px 0px 0px 17px;
+    border: 1px solid rgba(0, 0, 0, 0.20);
+    background: #F5F5F5;
+}
+.Music_Button_02{
+    padding: 0px 8px 0px 8px;
+    border-radius: 0px 17px 17px 0px;
+    border: 1px solid rgba(0, 0, 0, 0.20);
+    background: #F5F5F5;
+}
+.button_feature{
+    width: 118px;
+  
+}
+.Share_button{
+    width: 81px;
+    height: 25px;
+    border-radius: 17px;
+border: 1px solid rgba(0, 0, 0, 0.20);
+background: #F5F5F5;
+color: #000;
+text-align: center;
+font-size: 12px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+}
+.Download_button{
+    width: 95px;
+    height: 25px;
+    border-radius: 17px;
+border: 1px solid rgba(0, 0, 0, 0.20);
+background: #F5F5F5;
+text-align: center;
+font-size: 12px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+}
+.progress {
+    height: 5px; /* Adjust the width as needed */
+    
+  }
+/* Add this to your CSS */
+.progress-container {
+    position: relative;
+    width: 100%;
+    height: 5px;
+    background-color: grey;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  
+  
+  .progress-container {
+    position: relative;
+    width: 100%;
+    height: 5px;
+    background-color: #e0e0e0;
+    border-radius: 4px;
+    margin-top: 20px;
+  }
+  
+  .progress-bar {
+    position: absolute;
+    height: 100%;
+    background-color: #4caf50;
+    border-radius: 4px;
+    transition: width 0.3s ease;
+  }
+  
+  /* Add more styling based on your design */
+  /* music-player.component.css */
+
+.skeleton-loader {
+    display: flex; 
+    justify-content: center;
+     margin-top: 38px;
+     padding: 12px;
+}
+
+.skeleton-element {
+  position: relative;
+  width: 324px;
+  height: 324px;
+  border-radius: 20px;
+  background-color: #e0e0e0;
+  overflow: hidden;
+}
+
+.shine-line {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.4), transparent);
+  animation: shine 1.5s infinite linear;
+}
+.play_pause{
+  padding: 7px;
+  background: white;
+  border-radius: 40px;
+}
+
+@keyframes shine {
+  to {
+    left: 100%;
+  }
+}
+
+.skeleton-text {
+  width: 200px;
+  height: 20px;
+  background-color: #e0e0e0;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}

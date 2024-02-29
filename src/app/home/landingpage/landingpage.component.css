@@ -1,0 +1,161 @@
+ /* Custom CSS */
+ .landing_page {
+    background-color: #dbe6f4;
+    padding: 20px;
+    height: 100vh;
+}
+
+.Img_Div {
+    display: flex;
+    justify-content: center;
+}
+
+img {
+    position: relative;
+    margin-top: 21vh;
+    z-index: 1;
+    height: 38vh;
+}
+
+.circle-background {
+    position: absolute;
+    width: 25vw;
+    height: 21%;
+    background-color: #ffff;
+    border-radius: 50%;
+    z-index: 0;
+    border: 6px solid #d3dff1;
+}
+
+.Enjoy {
+    font-family: 'Poppins', sans-serif;
+    font-size: 25px;
+    font-weight: 600;
+    color: #59a7fe;
+}
+
+.uuDo {
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    font-size: 47px;
+    font-weight: bold;
+}
+
+.dot1, .dot2, .dot3 {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    opacity: 0;
+}
+.footer{
+    margin-top:12%;
+}
+.dot1 {
+    animation-name: dot1Animation;
+    animation-delay: 0s;
+}
+
+.dot2 {
+    animation-name: dot2Animation;
+    animation-delay: 0.33s;
+}
+
+.dot3 {
+    animation-name: dot3Animation;
+    animation-delay: 0.67s;
+}
+
+@keyframes dot1Animation {
+    0%, 100% {
+        transform: translateY(0);
+        opacity: 0;
+    }
+    50% {
+        transform: translateY(-10px);
+        opacity: 1;
+    }
+}
+
+@keyframes dot2Animation {
+    0%, 100% {
+        transform: translateY(0);
+        opacity: 0;
+    }
+    50% {
+        transform: translateY(-10px);
+        opacity: 1;
+    }
+}
+
+@keyframes dot3Animation {
+    0%, 100% {
+        transform: translateY(0);
+        opacity: 0;
+    }
+    50% {
+        transform: translateY(-10px);
+        opacity: 1;
+    }
+}
+
+/* Responsive styles for smaller screens */
+@media screen and (max-width:800px) {
+    .landing_page {
+        padding: 10px;
+        height: 100vh;
+    }
+
+    .Img_Div {
+        margin-top: 10vh;
+    }
+    .img-fluid {
+        /* Apply the wobbling animation */
+        animation: wobbleAnimation 1s ease-in-out infinite alternate;
+      }
+      
+      @keyframes wobbleAnimation {
+        /* Define the wobbling effect */
+        from {
+          transform: rotate(-10deg);
+        }
+        to {
+          transform: rotate(10deg);
+        }
+      }
+
+    img {
+        width: 67vw;
+    height: auto;
+    max-height: 54vh;
+    margin-top: 5vh;
+
+    }
+
+    .circle-background {
+        margin-top: 20vh;
+        width: 90vw;
+        left: 20px;
+        height: 20%;
+        border-width: 4px;
+    }
+
+    .Enjoy {
+        font-size: 22px;
+    }
+
+    .uuDo {
+        font-size: 36px;
+    }
+.footer{
+    margin-top:44%;
+}
+    .dot1, .dot2, .dot3 {
+        width: 8px;
+        height: 8px;
+        margin: 0 2px;
+    }
+}

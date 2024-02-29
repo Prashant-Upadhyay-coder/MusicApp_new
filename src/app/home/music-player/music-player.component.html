@@ -1,0 +1,144 @@
+<div class="Music_page">
+  <div class="container-fluid">
+    <!-- header  -->
+    <header>
+      <div class="row">
+        <div class="col-12" style="display:flex;justify-content: end;">
+          <svg xmlns="http://www.w3.org/2000/svg" width="4" height="16" viewBox="0 0 4 16" fill="none">
+            <path
+              d="M2 12C2.53043 12 3.03914 12.2107 3.41421 12.5858C3.78929 12.9609 4 13.4696 4 14C4 14.5304 3.78929 15.0391 3.41421 15.4142C3.03914 15.7893 2.53043 16 2 16C1.46957 16 0.96086 15.7893 0.585787 15.4142C0.210714 15.0391 0 14.5304 0 14C0 13.4696 0.210714 12.9609 0.585787 12.5858C0.96086 12.2107 1.46957 12 2 12ZM2 6C2.53043 6 3.03914 6.21071 3.41421 6.58579C3.78929 6.96086 4 7.46957 4 8C4 8.53043 3.78929 9.03914 3.41421 9.41421C3.03914 9.78929 2.53043 10 2 10C1.46957 10 0.96086 9.78929 0.585787 9.41421C0.210714 9.03914 0 8.53043 0 8C0 7.46957 0.210714 6.96086 0.585787 6.58579C0.96086 6.21071 1.46957 6 2 6ZM2 0C2.53043 0 3.03914 0.210714 3.41421 0.585786C3.78929 0.960859 4 1.46957 4 2C4 2.53043 3.78929 3.03914 3.41421 3.41421C3.03914 3.78929 2.53043 4 2 4C1.46957 4 0.96086 3.78929 0.585787 3.41421C0.210714 3.03914 0 2.53043 0 2C0 1.46957 0.210714 0.960859 0.585787 0.585786C0.96086 0.210714 1.46957 0 2 0Z"
+              fill="black" />
+          </svg>
+
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <ng-container *ngIf="isLoading; else content">
+        <div class="skeleton-loader">
+          <div class="skeleton-element">
+            <div class="shine-line"></div>
+          </div>
+        </div>
+      </ng-container>
+      <ng-template #content>
+        <div *ngIf="selectedTrack">
+          <div class="row">
+            <div class="col-12 img_div" *ngFor="let img of image">
+              <img [src]="selectedTrack.track.album.images[0].url" alt="Album Cover" class="Music_Image_Container">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12 ps-4 mt-3">
+              <p class="music_title">{{ selectedTrack.track.name }}</p>
+              <p class="Author_name">{{ selectedTrack.track.artists[0].name }}</p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-4 button_feature">
+              <button type="submit" class="btn Music_Button">
+                <svg width="19" height="17" viewBox="0 0 19 17" fill="none" xmlns="http://www.w3.org/2000/svg"
+                  xmlns:xlink="http://www.w3.org/1999/xlink">
+                  <rect width="19" height="17" fill="url(#pattern0)" />
+                  <defs>
+                    <pattern id="pattern0" patternContentUnits="objectBoundingBox" width="1" height="1">
+                      <use xlink:href="#image0_88_476" transform="matrix(0.00932018 0 0 0.0104167 0.0526316 0)" />
+                    </pattern>
+                    <image id="image0_88_476" width="96" height="96"
+                      xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGAAAABgCAYAAADimHc4AAAACXBIWXMAAAsTAAALEwEAmpwYAAADC0lEQVR4nO2dPYxMURiGHz8rsVlUKlGg8V+odESiViiI6BQKBYVGoyXxk5UgESRCIwoNBRKdKBDN+omGVoi1foplceQkdxQb2Zm5c07ee8+8T/K1u995n3vvnG9n5iwYY4wxxhhjTLNZCXwGngOXgL3AmLqpYWIPEGbVF+AisFrd3DBw7j8COvUDOA4sVDdZMk/mENCpu8CoutESGQV+9iAg1m1gvrrh0tjeY/idOqhuuDSO9SngI7BY3XRJ3OlTQKz96qZLYV51Rfcr4Ia68VJYWyP8WK/VjZfCgZoCJtWNl8LlmgJm1I2XwquaAj6pGy+BFcCfmgLeqptvO2PA05rhx3qsXkCbGQHuDRB+rKvqRbR5339twPBjHVUvpK2cThB+rB3qhbSRQ4nCj1tQv1vWJ/sG2PHMrmd5ro9y2QFMJwo/1gn1gtrEZmAqYfixtqkX1RbWAO8Thz9ZbWNNF5YDbxKHH+uKk+/OkuqFMmSonRYwN/GjI/czhf/BH03pzslM4Qfggq/+7i+6MxkFbClNQL8BdONMxvCDoL4DL4CzwPo2CJhoQGghU/2qPj450mQBXxsQVMhcD1JKSC0gDEmNWwBSAXGjsc53AFIJccPhRxA6AXHDYQHoBMQNhwWgfQxZABYwlNvQ4DsAefjx/W0/gtAJiH8atwB0AuIXyi0AnYDrFoD0NWCXBSALfyrVtzT7/cWpf15oaZ1KEb4FUPuNmVUWgOzqv5kqfN8B1BKw1QKQXf2PUobvO4C+Bey2AGRX/ztggQUgE3Akdfh+BNFz+PHsumUWQPsHL98BaAcvC0A7eFkA2sHLAtAOXhaAdvCyALSDlwWgHbwsAO3gZQFoBy8LQDt4WQDawcsC0A5eFoB28Mot4FuNnxmGafDKLeBlA0IMTR68cgsYb0CQocmDV24BG6ttXGhZxUOgllKAAKoTTULL6jAicghYBDxsQKi91q3qMNliBHQknG/44+h3dQqK9Py5XAI6bKgWOdGQLep0dY5d/O98m/51aYwxxhhjjDHGGGMMg/EXgSIKlsxyQFoAAAAASUVORK5CYII=" />
+                  </defs>
+                </svg>
+              </button>
+              <button type="submit" class="btn  Music_Button_02">
+                <svg width="23" height="18" viewBox="0 0 23 18" fill="none" xmlns="http://www.w3.org/2000/svg"
+                  xmlns:xlink="http://www.w3.org/1999/xlink">
+                  <rect x="23" y="18" width="23" height="18" transform="rotate(-180 23 18)" fill="url(#pattern0)" />
+                  <defs>
+                    <pattern id="pattern0" patternContentUnits="objectBoundingBox" width="1" height="1">
+                      <use xlink:href="#image0_88_478" transform="matrix(0.00815217 0 0 0.0104167 0.108696 0)" />
+                    </pattern>
+                    <image id="image0_88_478" width="96" height="96"
+                      xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGAAAABgCAYAAADimHc4AAAACXBIWXMAAAsTAAALEwEAmpwYAAADC0lEQVR4nO2dPYxMURiGHz8rsVlUKlGg8V+odESiViiI6BQKBYVGoyXxk5UgESRCIwoNBRKdKBDN+omGVoi1foplceQkdxQb2Zm5c07ee8+8T/K1u995n3vvnG9n5iwYY4wxxhhjTLNZCXwGngOXgL3AmLqpYWIPEGbVF+AisFrd3DBw7j8COvUDOA4sVDdZMk/mENCpu8CoutESGQV+9iAg1m1gvrrh0tjeY/idOqhuuDSO9SngI7BY3XRJ3OlTQKz96qZLYV51Rfcr4Ia68VJYWyP8WK/VjZfCgZoCJtWNl8LlmgJm1I2XwquaAj6pGy+BFcCfmgLeqptvO2PA05rhx3qsXkCbGQHuDRB+rKvqRbR5339twPBjHVUvpK2cThB+rB3qhbSRQ4nCj1tQv1vWJ/sG2PHMrmd5ro9y2QFMJwo/1gn1gtrEZmAqYfixtqkX1RbWAO8Thz9ZbWNNF5YDbxKHH+uKk+/OkuqFMmSonRYwN/GjI/czhf/BH03pzslM4Qfggq/+7i+6MxkFbClNQL8BdONMxvCDoL4DL4CzwPo2CJhoQGghU/2qPj450mQBXxsQVMhcD1JKSC0gDEmNWwBSAXGjsc53AFIJccPhRxA6AXHDYQHoBMQNhwWgfQxZABYwlNvQ4DsAefjx/W0/gtAJiH8atwB0AuIXyi0AnYDrFoD0NWCXBSALfyrVtzT7/cWpf15oaZ1KEb4FUPuNmVUWgOzqv5kqfN8B1BKw1QKQXf2PUobvO4C+Bey2AGRX/ztggQUgE3Akdfh+BNFz+PHsumUWQPsHL98BaAcvC0A7eFkA2sHLAtAOXhaAdvCyALSDlwWgHbwsAO3gZQFoBy8LQDt4WQDawcsC0A5eFoB28Mot4FuNnxmGafDKLeBlA0IMTR68cgsYb0CQocmDV24BG6ttXGhZxUOgllKAAKoTTULL6jAicghYBDxsQKi91q3qMNliBHQknG/44+h3dQqK9Py5XAI6bKgWOdGQLep0dY5d/O98m/51aYwxxhhjjDHGGGMMg/EXgSIKlsxyQFoAAAAASUVORK5CYII=" />
+                  </defs>
+                </svg>
+
+              </button>
+            </div>
+            <div class="col-4 ">
+              <button class="Share_button">Share <svg xmlns="http://www.w3.org/2000/svg" width="13" height="12"
+                  viewBox="0 0 13 12" fill="none">
+                  <path
+                    d="M6.5 0C2.925 0 0 2.7 0 6C0 9.3 2.925 12 6.5 12C10.075 12 13 9.3 13 6C13 2.7 10.075 0 6.5 0ZM7.8 8.4V6.6C5.4535 6.6 3.7765 7.458 2.6 9C3.068 6.798 4.511 4.638 7.8 4.2V2.4L11.05 5.4L7.8 8.4Z"
+                    fill="black" />
+                </svg></button>
+            </div>
+            <div class="col-4 ">
+              <button class="Download_button">Download <svg xmlns="http://www.w3.org/2000/svg" width="14" height="12"
+                  viewBox="0 0 14 12" fill="none">
+                  <path
+                    d="M10.1111 7.09091L14 4.36364L12.9111 3.6L10.8889 5.01818V1.09091H9.33333V5.01818L7.31111 3.6L6.22222 4.36364L10.1111 7.09091ZM10.8889 8.18182V10.9091C10.8889 11.5091 10.1889 12 9.33333 12H1.55556C0.7 12 0 11.5091 0 10.9091V1.09091C0 0.490909 0.7 0 1.55556 0H7V2.18182H1.55556V9.81818H9.33333V8.18182H10.8889Z"
+                    fill="black" />
+                </svg></button>
+
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12">
+              <div class="progress-container">
+                <div id="progress-bar" class="progress-bar" [style.width.%]="getProgress()"></div>
+                <div [style.left.%]="getProgress()">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 13 13" fill="none">
+                    <circle cx="6.5" cy="6.5" r="6.5" fill="black" />
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="row">
+            <div class="col-6">
+              {{ getElapsedTime() }}
+            </div>
+            <div class="col-6 text-end">
+              {{ getDuration() }}
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12 text-center mt-2 mb-2 p-2">
+              <div class="row">
+                <div class="col-3 mt-2">
+                  <a><i class="fas fa-random"></i></a>
+                </div>
+                <div class="col-2 mt-2">
+                  <a (click)="selectPreviousTrack()"><i class="fas fa-chevron-left"></i>
+                  </a>
+                </div>
+                <div class="col-2">
+                  <div class="play_pause">
+                    <a (click)="playOrPauseTrack(selectedTrack.track.preview_url)">
+                      <i class="fas" [ngClass]="{'fa-play': !isPlaying, 'fa-pause': isPlaying}"></i>
+                    </a>
+                  </div>
+                </div>
+                <!-- Add "Previous" and "Next" buttons to navigate through tracks -->
+                <div class="col-2 mt-2">
+                  <a (click)="selectNextTrack()"><i class="fas fa-chevron-right "></i></a>
+                </div>
+                <div class="col-3 mt-2">
+                  <a><i class="fas fa-redo "></i></a>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </ng-template>
+    </main>
+
+  </div>
+</div>
+<div class="footer">
+  <app-footer></app-footer>
+</div>

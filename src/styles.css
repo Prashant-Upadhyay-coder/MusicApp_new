@@ -1,0 +1,20 @@
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Global styles */
+  html, body {
+   
+  }
+  
+  body {
+    width: 96vw;
+    background-color: #dbe6f4 !important;
+        font-family: Roboto, "Helvetica Neue", sans-serif; 
+        overflow: hidden;
+  }
+  
