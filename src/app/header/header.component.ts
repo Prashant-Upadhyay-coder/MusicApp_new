@@ -8,5 +8,15 @@ import { Component } from '@angular/core';
   styleUrl: './header.component.css'
 })
 export class HeaderComponent {
+  username: string | null = null;
 
+  constructor() { }
+
+  ngOnInit(): void {
+    const userDataString = sessionStorage.getItem('loggedinUser');
+    if (userDataString) {
+      const userData = JSON.parse(userDataString);
+      this.username = userData.name; // Extract the name property
+    }
+  }
 }
