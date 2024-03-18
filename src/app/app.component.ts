@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { HeaderComponent } from "./header/header.component";
-import { FooterComponent } from "./footer/footer.component";
-import { SocialLoginModule, GoogleLoginProvider } from '@abacritt/angularx-social-login';
-import { BrowserModule } from '@angular/platform-browser';
+import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
+import { SocialLoginModule } from '@abacritt/angularx-social-login';
+
 
 @Component({
     selector: 'app-root',

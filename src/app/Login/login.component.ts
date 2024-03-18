@@ -1,19 +1,19 @@
 import { Component, EventEmitter, Input, OnInit, Output, input } from '@angular/core';
 import {  GoogleLoginProvider, SocialUser, SocialAuthService } from '@abacritt/angularx-social-login';
 import { CommonModule } from '@angular/common';
-import { Router } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports:[CommonModule],
+  imports:[CommonModule, RouterModule],
   providers:[SocialAuthService],
   templateUrl: './login.component.html',
   styleUrl: './login.component.css'
 })
 export class LoginComponent  implements  OnInit{
   user: SocialUser | undefined;
-  constructor(private authService: SocialAuthService ,private router: Router) { }
+  constructor(private authService: SocialAuthService , private router:Router) { }
 
  
   ngOnInit(): void {

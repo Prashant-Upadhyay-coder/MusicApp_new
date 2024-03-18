@@ -9,13 +9,14 @@ import { Component } from '@angular/core';
 })
 export class HeaderComponent {
   username: string | null = null;
-
+image='';
   constructor() { }
 
   ngOnInit(): void {
     const userDataString = sessionStorage.getItem('loggedinUser');
     if (userDataString) {
       const userData = JSON.parse(userDataString);
+      this.image= userData.picture 
       this.username = userData.name; // Extract the name property
     }
   }

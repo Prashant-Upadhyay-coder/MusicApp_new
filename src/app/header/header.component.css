@@ -6,13 +6,18 @@
 
 .User_imag_Div {
     display: inline-block;
-    width: 20px;
-    height: 20px;
+    width: 22px;
+    height: 22px;
     position: relative;
-    border: 2px solid #4692E6;;
+    border: 2px solid #4692E6;
     border-radius: 18px;
-    padding: 12px;
-    margin-top: 4px;
+    padding: 0px;
+    margin-top: 6px;
+}
+.User_imag_Div img{
+    position: absolute;
+    width: 18px;
+    border-radius: 18px;
 }
 .User_name{
     font-size: 12px;
