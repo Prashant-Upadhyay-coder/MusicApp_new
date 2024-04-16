@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
   templateUrl: './landingpage.component.html',
   styleUrl: './landingpage.component.css'
 })
-export class LandingpageComponent  implements OnInit {
+export class LandingpageComponent {
   isactive: boolean =true
  
   constructor(private router:Router){
@@ -22,8 +22,5 @@ export class LandingpageComponent  implements OnInit {
      }, 4000);
 
   }
-  ngOnInit(): void {
-    throw new Error('Method not implemented.');
-  }
-
+ 
 }

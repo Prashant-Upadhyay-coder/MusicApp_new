@@ -37,7 +37,8 @@ export class LoginComponent  implements  OnInit{
     return JSON.parse(atob(token.split(".")[1]));
   }
 
-  private handleAuthenticationResponse(token: string): void {
+ handleAuthenticationResponse(token: string): void {
+  console.log('Received OAuth response:', Response);
     const responsePayload = this.decodeJWTToken(token);
     sessionStorage.setItem('loggedinUser', JSON.stringify(responsePayload));
     this.router.navigateByUrl('/music_home'); 
