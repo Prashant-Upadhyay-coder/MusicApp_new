@@ -25,3 +25,12 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+
+open this link by change the screen size to Iphone SE / Write know it will not work properly for desktop browser, but you can see how it looks.
+[Link to My Awesome App](https://uudo.netlify.app/)
+
+Note: This app is only for demo purposes
+
+[Images](src/assets/Screenshot%20(192).png)
+[Images](src/assets/Screenshot%20(193).png)
